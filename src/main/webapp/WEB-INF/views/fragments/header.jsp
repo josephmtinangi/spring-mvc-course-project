@@ -1,3 +1,22 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Insert title here</title>
+
+<link rel="stylesheet"
+	href="<spring:url value="/resources/css/bootstrap.css"/>" type="text/css" />
+<link rel="stylesheet"
+	href="<spring:url value="/resources/css/home.css"/>" type="text/css" />
+
+</head>
+<body>
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -25,6 +44,11 @@
 			</form>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Link</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Projects <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="<spring:url value="/projects/add"/>">Add</a></li>
+					</ul></li>				
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 					<ul class="dropdown-menu">
