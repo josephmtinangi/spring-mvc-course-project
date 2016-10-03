@@ -13,7 +13,7 @@
 <link rel="stylesheet"
 	href="<spring:url value="/resources/css/bootstrap.css"/>" type="text/css" />
 <link rel="stylesheet"
-	href="<spring:url value="/resources/css/home.css"/>" type="text/css" />
+	href="<spring:url value="/resources/css/style.css"/>" type="text/css" />
 
 </head>
 <body>
