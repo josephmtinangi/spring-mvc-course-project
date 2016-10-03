@@ -37,6 +37,10 @@
 						<label for="description">Description</label>
 						<textarea rows="5" class="form-control"></textarea>
 					</div>
+					<div class="checkbox">
+						<label> <input type="checkbox" name="special" value="special"> Special
+						</label>
+					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
