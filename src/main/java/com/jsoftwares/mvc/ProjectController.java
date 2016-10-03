@@ -19,4 +19,10 @@ public class ProjectController {
 		System.out.println("Invoking saveProject");
 		return "project_add";
 	}
+	
+	@RequestMapping(value = "/add", method = RequestMethod.POST, params={"project_type=single"})
+	public String saveSingleProject() {
+		System.out.println("Invoking saveSingleProject");
+		return "project_add";
+	}
 }

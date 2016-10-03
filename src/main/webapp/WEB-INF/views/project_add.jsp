@@ -15,6 +15,13 @@
 							class="form-control" />
 					</div>
 					<div class="form-group">
+						<label for="project_type">Project Type</label> <select
+							name="project_type" id="project_type" class="form-control">
+							<option value="single">Single</option>
+							<option value="double">Double</option>
+						</select>
+					</div>
+					<div class="form-group">
 						<label for="sponsor">Sponsor</label><input type="text"
 							class="form-control" />
 					</div>
