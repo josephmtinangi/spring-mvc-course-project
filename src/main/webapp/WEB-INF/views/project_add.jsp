@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <jsp:include page="../views/fragments/header.jsp"></jsp:include>
 
 <div class="container">
@@ -9,7 +9,7 @@
 			</div>
 			<div class="panel-body">
 
-				<form action="">
+				<form action="<spring:url value="/projects/add"/>" method="POST">
 					<div class="form-group">
 						<label for="name">Name</label><input type="text"
 							class="form-control" />
