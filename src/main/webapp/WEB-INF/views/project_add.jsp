@@ -11,7 +11,7 @@
 
 				<form action="<spring:url value="/projects/add"/>" method="POST">
 					<div class="form-group">
-						<label for="name">Name</label><input type="text"
+						<label for="name">Name</label><input type="text" name="name"
 							class="form-control" />
 					</div>
 					<div class="form-group">
@@ -38,7 +38,8 @@
 						<textarea rows="5" class="form-control"></textarea>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="special" value="special"> Special
+						<label> <input type="checkbox" name="special"
+							value="special"> Special
 						</label>
 					</div>
 					<div class="form-group">
