@@ -48,6 +48,7 @@
 					data-toggle="dropdown">Projects <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href="<spring:url value="/projects/add"/>">Add</a></li>
+						<li><a href="<spring:url value="/projects/find"/>">Find</a></li>
 					</ul></li>				
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Dropdown <b class="caret"></b></a>
