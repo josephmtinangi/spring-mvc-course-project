@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="../views/fragments/header.jsp"></jsp:include>
 <div class="container">
@@ -22,7 +22,7 @@
 					<tbody>
 						<c:forEach items="${ projects }" var="project">
 							<tr>
-								<td>${ project.name }</td>
+								<td><a href="<spring:url value="/projects/${project.projectId}"/>">${project.name}</a></td>
 								<td>${ project.sponsor }</td>
 								<td>${ project.description }</td>
 							</tr>
