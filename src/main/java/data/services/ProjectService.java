@@ -19,6 +19,10 @@ public class ProjectService {
 		
 		this.projects.addAll(Arrays.asList(new Project[]{javaProject, javascriptProject, htmlProject}));
 	}
+	
+	public List<Project> findAll(){
+		return this.projects;
+	}	
 
 	public Project find(Long projectId){
 		return this.projects.stream().filter(p -> {
