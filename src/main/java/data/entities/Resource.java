@@ -16,6 +16,16 @@ public class Resource {
 	private String unitOfMeasure;
 	
 	private String[] indicators;
+	
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+	private String notes;
 
 	public Long getResourceId() {
 		return resourceId;
@@ -68,7 +78,8 @@ public class Resource {
 	@Override
 	public String toString() {
 		return "Resource [resourceId=" + resourceId + ", name=" + name + ", resource_type=" + resource_type + ", cost="
-				+ cost + ", unitOfMeasure=" + unitOfMeasure + ", indicators=" + Arrays.toString(indicators) + "]";
+				+ cost + ", unitOfMeasure=" + unitOfMeasure + ", indicators=" + Arrays.toString(indicators) + ", notes="
+				+ notes + "]";
 	}
 	
 	
