@@ -25,18 +25,23 @@
 			<div class="form-group">
 				<label for="" class="col-sm-3 control-label">Cost</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" />
+					<input type="text" name="cost" class="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="" class="col-sm-3 control-label">Unit of measure</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" />
+					<form:radiobuttons path="unitOfMeasure" items="${ radioOptions }"/>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="" class="col-sm-3 control-label"></label>
+				<label for="resource-indicators" class="col-sm-3 control-label">Indicators</label>
 				<div class="col-sm-6">
+					<form:checkboxes items="${ checkOptions }" path="indicators"/>
+				</div>
+			</div>			
+			<div class="form-group">
+				<div class="col-sm-6 col-sm-offset-3">
 					<button type="submit" class="btn btn-primary">Save</button>
 				</div>
 			</div>
