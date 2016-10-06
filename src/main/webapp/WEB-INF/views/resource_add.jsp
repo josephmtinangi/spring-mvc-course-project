@@ -19,11 +19,7 @@
 			<div class="form-group">
 				<label for="" class="col-sm-3 control-label">Type</label>
 				<div class="col-sm-6">
-					<select name="resource_type" id="resource_type"
-						class="form-control">
-						<option value="">Public</option>
-						<option value="">Private</option>
-					</select>
+					<form:select path="resource_type" items="${ resource_type_options }" cssClass="form-control" />
 				</div>
 			</div>
 			<div class="form-group">

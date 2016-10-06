@@ -1,5 +1,9 @@
 package com.jsoftwares.mvc;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,6 +17,10 @@ public class ResourceController {
 
 	@RequestMapping("/add")
 	public String add(Model model) {
+		System.out.println("Invoking add method");
+		List<String> options = new LinkedList<>(
+				Arrays.asList(new String[] { "Material", "Other", "Staff", "Technical Equipment" }));
+		model.addAttribute("resource_type_options", options);
 		model.addAttribute("resource", new Resource());
 		return "resource_add";
 	}
