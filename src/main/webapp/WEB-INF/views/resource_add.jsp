@@ -11,9 +11,9 @@
 		<form:form action="${ formUrl }" method="POST" modelAttribute="resource" class="form-horizontal">
 		
 			<div class="form-group">
-				<label for="" class="col-sm-3 control-label">Name</label>
+				<label for="resource-name" class="col-sm-3 control-label">Name</label>
 				<div class="col-sm-6">
-					<input type="text" class="form-control" />
+					<form:input path="name" cssClass="form-control" id="resource-name"/>
 				</div>
 			</div>
 			<div class="form-group">
