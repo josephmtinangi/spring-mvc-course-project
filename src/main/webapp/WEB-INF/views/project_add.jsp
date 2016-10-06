@@ -22,24 +22,24 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="sponsor">Sponsor</label><input type="text"
+						<label for="sponsor">Sponsor</label><input type="text" name="sponsor"
 							class="form-control" />
 					</div>
 					<div class="form-group">
 						<label for="authorized_funds">Authorized Funds</label><input
-							type="text" class="form-control" />
+							type="numeric" name="authorizedFunds" class="form-control" />
 					</div>
 					<div class="form-group">
 						<label for="authorized_hours">Authorized Hours</label><input
-							type="text" class="form-control" />
+							type="numeric" name="authorizedHours" class="form-control" />
 					</div>
 					<div class="form-group">
 						<label for="description">Description</label>
-						<textarea rows="5" class="form-control"></textarea>
+						<textarea name="description" rows="5" class="form-control"></textarea>
 					</div>
 					<div class="checkbox">
 						<label> <input type="checkbox" name="special"
-							value="special"> Special
+							value="true"> Special
 						</label>
 					</div>
 					<div class="form-group">

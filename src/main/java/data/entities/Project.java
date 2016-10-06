@@ -27,6 +27,7 @@ public class Project {
 	}
 
 	public void setName(String name) {
+		System.out.println("Spring MVC data binding in action");
 		this.name = name;
 	}
 
@@ -85,5 +86,18 @@ public class Project {
 	public void setProject_type(String project_type) {
 		this.project_type = project_type;
 	}
+	
+	/**
+	 * This will print everything
+	 */
+
+	@Override
+	public String toString() {
+		return "Project [projectId=" + projectId + ", name=" + name + ", description=" + description + ", sponsor="
+				+ sponsor + ", authorizedHours=" + authorizedHours + ", authorizedFunds=" + authorizedFunds + ", year="
+				+ year + ", special=" + special + ", project_type=" + project_type + "]";
+	}
+	
+	
 
 }

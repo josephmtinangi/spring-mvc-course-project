@@ -5,11 +5,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import data.entities.Project;
 import data.services.ProjectService;
 
 @Controller
@@ -39,22 +40,12 @@ public class ProjectController {
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String saveProject(@RequestParam("name") String name, HttpSession session) {
-		System.out.println(session.getAttribute("token"));
-		System.out.println(name);
+	public String saveProject(@ModelAttribute Project project) {
 		System.out.println("Invoking saveProject");
-		return "project_add";
-	}
-
-	@RequestMapping(value = "/add", method = RequestMethod.POST, params = { "project_type=single" })
-	public String saveSingleProject() {
-		System.out.println("Invoking saveSingleProject");
-		return "project_add";
-	}
-
-	@RequestMapping(value = "/add", method = RequestMethod.POST, params = { "project_type=single", "special" })
-	public String saveSpecialProject() {
-		System.out.println("Invoking saveSpecialProject");
+		/**
+		 * This will invoke the toString method
+		 */
+		System.out.print(project);
 		return "project_add";
 	}
 }
