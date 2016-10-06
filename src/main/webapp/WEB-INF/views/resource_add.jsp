@@ -1,12 +1,15 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <jsp:include page="../views/fragments/header.jsp"></jsp:include>
 
 <div class="container">
 	<div class="row">
 		<h2>Add a resource</h2>
 		
+		<spring:url value="/resource/save" var="formUrl"/>
 		
-		<form action="<spring:url value="/resource/save"/>" method="POST" class="form-horizontal">
+		<form:form action="${ formUrl }" method="POST" modelAttribute="resource" class="form-horizontal">
+		
 			<div class="form-group">
 				<label for="" class="col-sm-3 control-label">Name</label>
 				<div class="col-sm-6">
@@ -41,7 +44,7 @@
 					<button type="submit" class="btn btn-primary">Save</button>
 				</div>
 			</div>
-		</form>
+		</form:form>
 	</div>
 </div>
 
