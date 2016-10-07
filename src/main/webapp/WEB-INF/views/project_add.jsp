@@ -1,4 +1,5 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <jsp:include page="../views/fragments/header.jsp"></jsp:include>
 
 <div class="container">
@@ -9,43 +10,54 @@
 			</div>
 			<div class="panel-body">
 
-				<form action="<spring:url value="/projects/add"/>" method="POST">
+				<spring:url value="/projects/add" var="formUrl" />
+				<form:form modelAttribute="project" action="${ formUrl }"
+					method="post">
 					<div class="form-group">
-						<label for="name">Name</label><input type="text" name="name"
-							class="form-control" />
+						<label for="name">Name</label>
+						<form:input path="name" cssClass="form-control" />
 					</div>
 					<div class="form-group">
-						<label for="project_type">Project Type</label> <select
-							name="project_type" id="project_type" class="form-control">
-							<option value="single">Single</option>
-							<option value="double">Double</option>
-						</select>
+						<label for="project_type">Project Type</label>
+						<form:select path="project_type" cssClass="form-control"
+							items="${ types }"></form:select>
+					</div>
+
+					<div class="form-group">
+						<label for="sponsor-name">Sponsor Name</label>
+						<form:input cssClass="form-control" path="sponsor.name" />
+					</div>
+
+					<div class="form-group">
+						<label for="sponsor-phone">Sponsor Phone</label>
+						<form:input cssClass="form-control" path="sponsor.phone" />
+					</div>
+
+					<div class="form-group">
+						<label for="sponsor-email">Sponsor Email</label>
+						<form:input cssClass="form-control" path="sponsor.email" />
+					</div>
+
+					<div class="form-group">
+						<label for="authorized_funds">Authorized Funds</label>
+						<form:input path="authorizedFunds" cssClass="form-control" />
 					</div>
 					<div class="form-group">
-						<label for="sponsor">Sponsor</label><input type="text" name="sponsor"
-							class="form-control" />
-					</div>
-					<div class="form-group">
-						<label for="authorized_funds">Authorized Funds</label><input
-							type="numeric" name="authorizedFunds" class="form-control" />
-					</div>
-					<div class="form-group">
-						<label for="authorized_hours">Authorized Hours</label><input
-							type="numeric" name="authorizedHours" class="form-control" />
+						<label for="authorized_hours">Authorized Hours</label>
+						<form:input path="authorizedHours" cssClass="form-control" />
 					</div>
 					<div class="form-group">
 						<label for="description">Description</label>
-						<textarea name="description" rows="5" class="form-control"></textarea>
+						<form:textarea path="description" cssClass="form-control" rows="5" />
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="special"
-							value="true"> Special
+						<label> <form:checkbox path="special" /> Special
 						</label>
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
-				</form>
+				</form:form>
 
 			</div>
 		</div>

@@ -1,6 +1,9 @@
 package com.jsoftwares.mvc;
 
-import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,9 +36,16 @@ public class ProjectController {
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public String addProject(HttpSession session) {
-		session.setAttribute("token", "12345");
-		System.out.println("Invoking addProject");
+	public String addProject(Model model) {
+		
+		model.addAttribute("types", new ArrayList<String>(){{
+			add("");
+			add("Single Year");
+			add("Multi Year");
+		}});
+		
+		model.addAttribute("project", new Project());
+		
 		return "project_add";
 	}
 

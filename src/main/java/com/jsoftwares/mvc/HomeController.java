@@ -20,7 +20,6 @@ public class HomeController {
 		
 		Project project = new Project();
 		project.setName("Galaxisize");
-		project.setSponsor("NASA");
 		project.setDescription("This is a simple project sponsored by NASA");
 		
 		model.addAttribute("currentProject", project);
