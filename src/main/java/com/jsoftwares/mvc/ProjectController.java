@@ -1,13 +1,12 @@
 package com.jsoftwares.mvc;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import data.entities.Project;
 import data.services.ProjectService;
+import data.validators.ProjectValidator;
 
 @Controller
 @RequestMapping("/projects")
@@ -57,5 +57,10 @@ public class ProjectController {
 		 */
 		System.out.print(project);
 		return "project_add";
+	}
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder){
+		binder.setValidator(new ProjectValidator());
 	}
 }
