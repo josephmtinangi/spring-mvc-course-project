@@ -1,6 +1,7 @@
 package data.entities;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class Project {
 
@@ -13,6 +14,7 @@ public class Project {
 	private String year;
 	private Boolean special;
 	private String project_type;
+	private List<String> pointsOfContacts;
 
 	public Long getProjectId() {
 		return projectId;
@@ -88,12 +90,23 @@ public class Project {
 	public void setSponsor(Sponsor sponsor) {
 		this.sponsor = sponsor;
 	}
+	
+	
+
+	public List<String> getPointsOfContacts() {
+		return pointsOfContacts;
+	}
+
+	public void setPointsOfContacts(List<String> pointsOfContacts) {
+		this.pointsOfContacts = pointsOfContacts;
+	}
 
 	@Override
 	public String toString() {
 		return "Project [projectId=" + projectId + ", name=" + name + ", description=" + description + ", sponsor="
 				+ sponsor + ", authorizedHours=" + authorizedHours + ", authorizedFunds=" + authorizedFunds + ", year="
-				+ year + ", special=" + special + ", project_type=" + project_type + "]";
+				+ year + ", special=" + special + ", project_type=" + project_type + ", pointsOfContacts="
+				+ pointsOfContacts + "]";
 	}
 	
 	

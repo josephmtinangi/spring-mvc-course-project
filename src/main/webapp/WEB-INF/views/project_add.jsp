@@ -50,6 +50,22 @@
 						<label for="description">Description</label>
 						<form:textarea path="description" cssClass="form-control" rows="5" />
 					</div>
+
+					<div class="form-group">
+						<label for="poc">POC</label>
+						<form:input cssClass="form-control" path="pointsOfContacts[0]" />
+					</div>
+
+					<div class="form-group">
+						<label for="poc2">POC2</label>
+						<form:input cssClass="form-control" path="pointsOfContacts[1]" />
+					</div>
+
+					<div class="form-group">
+						<label for="poc3">POC3</label>
+						<form:input cssClass="form-control" path="pointsOfContacts[2]" />
+					</div>
+
 					<div class="checkbox">
 						<label> <form:checkbox path="special" /> Special
 						</label>
