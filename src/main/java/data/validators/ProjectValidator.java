@@ -19,6 +19,10 @@ public class ProjectValidator implements Validator {
 		if(project.getName().length() < 5){
 			errors.rejectValue("name", "project.name", "The name is too short");
 		}
+		
+		if(project.getDescription().length() == 0){
+			errors.rejectValue("description", "project.description", "You must provide a description.");
+		}
 	}
 
 }

@@ -10,7 +10,7 @@ public class Project {
 	private Long projectId;
 	private String name;
 	
-	@NotBlank
+	@NotBlank(message="You must provide a description.")
 	private String description;
 	
 	private Sponsor sponsor;
