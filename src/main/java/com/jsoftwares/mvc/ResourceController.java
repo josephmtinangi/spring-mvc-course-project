@@ -17,17 +17,32 @@ public class ResourceController {
 
 	@RequestMapping("/add")
 	public String add(Model model) {
-		System.out.println("Invoking add method");
-		List<String> options = new LinkedList<>(
-				Arrays.asList(new String[] { "Material", "Other", "Staff", "Technical Equipment" }));
-		List<String> radios = new LinkedList<>(Arrays.asList(new String[] { "Hours", "Piece", "Tons" }));
-		List<String> checks = new LinkedList<>(
-				Arrays.asList(new String[] { "Lead Time", "Special Rate", "Requires Approval" }));
-		model.addAttribute("resource_type_options", options);
-		model.addAttribute("radioOptions", radios);
-		model.addAttribute("checkOptions", checks);
-		model.addAttribute("resource", new Resource());
 		return "resource_add";
+	}
+	
+	@ModelAttribute("resource")
+	public Resource getResource()
+	{
+		System.out.println("Adding a new resource to the model");
+		return new Resource();
+	}
+	
+	@ModelAttribute("typeOptions")
+	public List<String> getTypes()
+	{
+		return new LinkedList<>(
+				Arrays.asList(new String[] { "", "Material", "Other", "Staff", "Technical Equipment" }));
+	}
+	
+	@ModelAttribute("radioOptions")
+	public List<String> getRadios()
+	{
+		return new LinkedList<>(Arrays.asList(new String[] { "Hours", "Piece", "Tons" }));
+	}
+
+	@ModelAttribute("checkOptions")
+	public List<String> getChecks() {
+		return new LinkedList<>(Arrays.asList(new String[] { "Lead Time", "Special Rate", "Requires Approval" }));
 	}
 
 	@RequestMapping("/save")

@@ -21,7 +21,7 @@
 				<label for="" class="col-sm-3 control-label">Type</label>
 				<div class="col-sm-6">
 					<form:select path="resource_type"
-						items="${ resource_type_options }" cssClass="form-control" />
+						items="${ typeOptions }" cssClass="form-control" />
 				</div>
 			</div>
 			<div class="form-group">
