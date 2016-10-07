@@ -1,5 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <jsp:include page="../views/fragments/header.jsp"></jsp:include>
 
 <div class="container">
@@ -40,6 +41,7 @@
 				<label for="resource-indicators" class="col-sm-3 control-label">Indicators</label>
 				<div class="col-sm-6">
 					<form:checkboxes items="${ checkOptions }" path="indicators" />
+					<a id="request-link" href="<spring:url value="/resource/request"/>">Send Request</a>
 				</div>
 			</div>
 			<div class="form-group">
