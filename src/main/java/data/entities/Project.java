@@ -3,11 +3,16 @@ package data.entities;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.hibernate.validator.constraints.NotBlank;;
+
 public class Project {
 
 	private Long projectId;
 	private String name;
+	
+	@NotBlank
 	private String description;
+	
 	private Sponsor sponsor;
 	private BigDecimal authorizedHours;
 	private BigDecimal authorizedFunds;
@@ -17,7 +22,7 @@ public class Project {
 	private List<String> pointsOfContacts;
 
 	public Long getProjectId() {
-		return projectId;
+		return projectId; 
 	}
 
 	public void setProjectId(Long projectId) {
