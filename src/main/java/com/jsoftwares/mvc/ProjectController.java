@@ -54,20 +54,7 @@ public class ProjectController {
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String saveProject(@Valid @ModelAttribute Project project, Errors errors) {
-		
-		if(!errors.hasErrors()){
-			System.out.println("The project validated");
-		}else{
-			System.out.println("The project did not validate");
-			return "project_add";
-		}
-		
-		System.out.println("Invoking saveProject");
-		/**
-		 * This will invoke the toString method
-		 */
-		System.out.print(project);
-		return "project_add";
+		return "redirect:/projects/find";
 	}
 	
 	@InitBinder
