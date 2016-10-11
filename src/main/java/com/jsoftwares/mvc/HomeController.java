@@ -3,6 +3,7 @@ package com.jsoftwares.mvc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -14,20 +15,18 @@ import data.services.ProjectService;
  */
 @Controller
 public class HomeController {
-	
-	@Autowired
-	private ProjectService service;
-	
-	@RequestMapping(value="/", params = "projectId")
-	public String goHomeAgain(Model model, @RequestParam("projectId") Long projectId)
+
+	@RequestMapping(value="/")
+	public String goHomeAgain(Model model, @ModelAttribute("project") Project project)
 	{
-		model.addAttribute("currentProject", this.service.find(projectId));
+		model.addAttribute("currentProject", project);
 		return "home";
 	}
 
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
+	/*
 	@RequestMapping("/")
 	public String goHome(Model model) {
 		
@@ -39,5 +38,6 @@ public class HomeController {
 		
 		return "welcome";
 	}
+	*/
 
 }
